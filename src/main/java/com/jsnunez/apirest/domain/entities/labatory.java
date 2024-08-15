@@ -7,28 +7,27 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
-public class Region {
-
+public class labatory {
     @Id
-    @Column(columnDefinition = "VARCHAR(5)", nullable = false)
-    private String coderegion;
+    @Column(columnDefinition = "INT", nullable = false)
+    private int id;
 
     @Column(columnDefinition = "VARCHAR(50)", nullable = false)
     private String nameregion;
 
-   @ManyToOne
-   @JoinColumn(name = "codecountry_id")
-    private Country country;
+    @ManyToOne
+    @JoinColumn(name = "codecityreg")
+    private City city;
 
-    public Region() {
+    public labatory() {
     }
 
-    public String getCoderegion() {
-        return coderegion;
+    public int getId() {
+        return id;
     }
 
-    public void setCoderegion(String coderegion) {
-        this.coderegion = coderegion;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNameregion() {
@@ -39,4 +38,15 @@ public class Region {
         this.nameregion = nameregion;
     }
 
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
+
+
+
+    
 }
